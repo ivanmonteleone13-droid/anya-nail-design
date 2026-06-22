@@ -1,10 +1,17 @@
-/** Production URL — update after first Vercel deploy if the slug differs. */
+/** Production URL — canonical domain on Vercel. */
 export const PRODUCTION_URL = "https://business-2-skotjanst.vercel.app";
 
 const DEV_URL = "http://localhost:3002";
 
 /** Resolves the canonical site URL at build/runtime (Vercel-aware). */
 export function getSiteUrl(): string {
+  if (process.env.VERCEL_ENV === "production") {
+    const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+    if (productionHost) {
+      return `https://${productionHost}`;
+    }
+    return PRODUCTION_URL;
+  }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }

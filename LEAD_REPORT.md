@@ -2,7 +2,7 @@
 
 ## Business Selected
 
-**Skotjänst** - Skomakeri & nyckelservice i Uppsala - Skomakeri & nyckelservice i Uppsala – Skomakeri & nyckelservice  
+**Skotjänst** - Skomakeri & nyckelservice i Uppsala - Skomakeri & nyckelservice i Uppsala - Skomakeri & nyckelservice i Uppsala – Skomakeri & nyckelservice  
 **Address:** Stora Torget 1A, 753 20 Uppsala  
 **Phone:** 018-13 75 54
 
