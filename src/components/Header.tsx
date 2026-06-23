@@ -59,12 +59,14 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={business.phoneLink}
-            className="text-sm font-semibold text-[#5C4033] hover:underline"
-          >
-            {business.phone}
-          </a>
+          {business.phoneLink && business.phone ? (
+            <a
+              href={business.phoneLink}
+              className="text-sm font-semibold text-[#5C4033] hover:underline"
+            >
+              {business.phone}
+            </a>
+          ) : null}
           <a
             href={business.bookingUrl}
             className="rounded-full bg-[#C9A227] px-5 py-2.5 text-sm font-semibold text-[#3D2914] shadow-sm transition hover:bg-[#b8921f]"

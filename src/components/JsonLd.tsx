@@ -13,16 +13,18 @@ const dayMap: Record<string, string> = {
 
 export default function JsonLd() {
   const siteUrl = getSiteUrl();
-  const sameAs = [business.facebookUrl, business.instagramUrl].filter(Boolean);
+  const sameAs = [business.facebookUrl, business.instagramUrl, business.bookingUrl].filter(
+    Boolean
+  );
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ShoeStore",
+    "@type": "NailSalon",
     "@id": `${siteUrl}/#localbusiness`,
     name: business.name,
     description: business.description,
+    ...(business.phone ? { telephone: business.phone } : {}),
     image: `${siteUrl}/og-image.png`,
-    telephone: business.phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: business.address.street,
@@ -44,6 +46,22 @@ export default function JsonLd() {
     },
     url: siteUrl,
     priceRange: "$$",
+    areaServed: {
+      "@type": "City",
+      name: "Uppsala",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Nageltjänster",
+      itemListElement: business.services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.name,
+          description: s.description,
+        },
+      })),
+    },
     openingHoursSpecification: business.hours.regular
       .filter((h) => h.hours !== "Stängt")
       .map((h) => ({
@@ -55,12 +73,25 @@ export default function JsonLd() {
     ...(sameAs.length > 0 ? { sameAs } : {}),
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: business.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: business.name,
     description: business.description,
-    telephone: business.phone,
+    ...(business.phone ? { telephone: business.phone } : {}),
     address: getFullAddress(),
     url: siteUrl,
     geo: {
@@ -80,6 +111,10 @@ export default function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
         type="application/ld+json"

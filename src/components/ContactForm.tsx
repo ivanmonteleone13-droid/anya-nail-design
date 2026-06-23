@@ -19,7 +19,7 @@ export default function ContactForm() {
       >
         <p className="text-lg font-semibold text-[#3D2914]">Tack för ditt meddelande!</p>
         <p className="mt-2 text-sm text-[#5C4033]/70">
-          Detta är en demo-webbplats. Ring {business.phone} för att nå oss direkt.
+          Detta är en demo-webbplats. Boka via Bokadirekt eller kontakta oss på Instagram @anyanaildesign.
         </p>
       </div>
     );

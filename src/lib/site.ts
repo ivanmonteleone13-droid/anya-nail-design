@@ -1,7 +1,7 @@
 /** Production URL — canonical domain on Vercel. */
-export const PRODUCTION_URL = "https://business-2-skotjanst.vercel.app";
+export const PRODUCTION_URL = "https://anya-nail-design.vercel.app";
 
-const DEV_URL = "http://localhost:3002";
+const DEV_URL = "http://localhost:3018";
 
 /** Resolves the canonical site URL at build/runtime (Vercel-aware). */
 export function getSiteUrl(): string {

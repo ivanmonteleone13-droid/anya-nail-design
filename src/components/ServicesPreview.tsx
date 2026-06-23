@@ -42,7 +42,7 @@ export default function ServicesPreview() {
         </div>
 
         <p className="mt-8 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          <strong>Tips:</strong> Ring {business.phone} innan besök för att säkerställa att vi har öppet.
+          <strong>Tips:</strong> Boka via Bokadirekt för att säkerställa din tid.
         </p>
       </div>
     </section>

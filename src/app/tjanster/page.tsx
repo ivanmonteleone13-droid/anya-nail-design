@@ -44,7 +44,7 @@ export default function ServicesPage() {
 
           <div className="mt-12 space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-6 text-sm text-amber-950">
             <p>
-              <strong>Ring innan besök:</strong> {business.phone} – så vet du att vi har öppet.
+              <strong>Bokning:</strong> Se tillgängliga tider på Bokadirekt.
             </p>
             <p>
               <strong>Offert:</strong> Vi ger pris efter att vi sett skorna eller nyckeln.
@@ -56,7 +56,7 @@ export default function ServicesPage() {
               href={business.bookingUrl}
               className="inline-flex rounded-full bg-[#5C4033] px-8 py-4 font-semibold text-white transition hover:bg-[#3D2914]"
             >
-              Ring {business.phone}
+              {business.bookingLabel}
             </a>
           </div>
         </div>

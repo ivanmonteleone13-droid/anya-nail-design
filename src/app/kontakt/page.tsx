@@ -4,7 +4,7 @@ import { business, getFullAddress, getMapsEmbedUrl, getMapsLink } from "@/lib/bu
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: `Kontakta ${business.name} på Stora Torget i Uppsala. Ring eller besök vår butik.`,
+  description: `Kontakta ${business.name} på Hugingatan 8 i Luthagen, Uppsala. Boka via Bokadirekt eller Instagram.`,
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h1 className="text-4xl font-bold sm:text-5xl">Kontakt</h1>
           <p className="mt-6 max-w-2xl text-lg text-amber-50/90">
-            Vi finns på Stora Torget i centrala Uppsala. Ring gärna innan besök.
+            Vi finns på Hugingatan 8 i Luthagen. Boka via Bokadirekt eller Instagram.
           </p>
         </div>
       </section>
@@ -28,17 +28,34 @@ export default function ContactPage() {
                 <dt className="text-sm font-medium text-[#5C4033]/60">Adress</dt>
                 <dd className="mt-1 text-lg text-[#3D2914]">{getFullAddress()}</dd>
               </div>
-              <div>
-                <dt className="text-sm font-medium text-[#5C4033]/60">Telefon</dt>
-                <dd>
-                  <a
-                    href={business.phoneLink}
-                    className="text-lg font-semibold text-[#5C4033] hover:underline"
-                  >
-                    {business.phone}
-                  </a>
-                </dd>
-              </div>
+              {business.phoneLink && business.phone ? (
+                <div>
+                  <dt className="text-sm font-medium text-[#5C4033]/60">Telefon</dt>
+                  <dd>
+                    <a
+                      href={business.phoneLink}
+                      className="text-lg font-semibold text-[#5C4033] hover:underline"
+                    >
+                      {business.phone}
+                    </a>
+                  </dd>
+                </div>
+              ) : null}
+              {business.instagramUrl ? (
+                <div>
+                  <dt className="text-sm font-medium text-[#5C4033]/60">Instagram</dt>
+                  <dd>
+                    <a
+                      href={business.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold text-[#5C4033] hover:underline"
+                    >
+                      @anyanaildesign
+                    </a>
+                  </dd>
+                </div>
+              ) : null}
             </dl>
 
             <div className="mt-10">
