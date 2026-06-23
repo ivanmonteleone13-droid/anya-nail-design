@@ -17,6 +17,7 @@ export const business = {
   bookingUrl: "https://www.bokadirekt.se/places/anya-nail-design-56682",
   bookingLabel: "Boka på Bokadirekt",
   websiteUrl: null as string | null,
+  logoImage: null as string | null,
   heroImage: "/images/hero.jpg",
   aboutImage: "/images/gallery-2.jpg",
   facebookUrl: null as string | null,
@@ -95,7 +96,7 @@ export const business = {
       icon: "✨",
       description: "Rysk manikyr hos Anya Nail Design — noggrant utfört med premiumprodukter och personlig service.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 350,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -104,7 +105,7 @@ export const business = {
       icon: "💎",
       description: "Chrome och ombré hos Anya Nail Design — noggrant utfört med premiumprodukter och personlig service.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 800,
       note: "Kontakta oss för aktuella priser.",
     },
     {
